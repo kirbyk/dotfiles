@@ -1,0 +1,86 @@
+###############################################################################
+# Apps                                                                        #
+###############################################################################
+
+# BetterTouchTool
+defaults write com.hegenberg.BetterTouchTool borderWidth -int 0
+defaults write com.hegenberg.BetterTouchTool previewWindowAnimationDuration -int 0
+defaults write com.hegenberg.BetterTouchTool roundedCorners -int 0
+
+###############################################################################
+# Menubar                                                                     #
+###############################################################################
+
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+# Make the dock as small as possible
+defaults write com.apple.dock tilesize -int 16
+
+# Auto-hide the dock
+defaults write com.apple.dock autohide -bool true
+
+# Remove all the apps from the dock
+defaults write com.apple.dock persistent-apps -array ""
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Open home folder for new finder windows
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/kirbykohlmorgen/"
+
+# Remove recent tags
+defaults write com.apple.finder ShowRecentTags -int 0
+
+# Always display files and folders in finder as a list
+defaults write com.apple.finder FXPreferredViewStyle Nlsv
+
+# finder: show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# finder: set window title to full POSIX file path of current folder
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Automatically open a new finder window when a volume is mounted
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Increase grid spacing for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 70" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 70" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 70" ~/Library/Preferences/com.apple.finder.plist
+
+# Increase the size of icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0

@@ -1,0 +1,24 @@
+local hotkey = require "mjolnir.hotkey"
+local window = require "mjolnir.window"
+
+local super = {"cmd", "alt", "ctrl"}
+
+hotkey.bind(super, "M", function()
+  local win = window.focusedwindow()
+  win:maximize()
+end)
+
+hotkey.bind(super, "LEFT", function()
+  local win = window.focusedwindow()
+  local f = win:frame()
+  f.w = f.w / 2
+  win:setframe(f)
+end)
+
+hotkey.bind(super, "RIGHT", function()
+  local win = window.focusedwindow()
+  local f = win:frame()
+  f.w = f.w / 2
+  f.x = f.x + f.w
+  win:setframe(f)
+end)

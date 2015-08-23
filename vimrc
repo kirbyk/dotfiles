@@ -9,22 +9,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " let Vundle manage Vundle
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'raimondi/delimitmate'
 Plugin 'roman/golden-ratio'
 Plugin 'scrooloose/syntastic'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-surround'
-Plugin 'wincent/Command-T'
 
 call vundle#end()
 filetype plugin indent on       " fix html and js indenting
@@ -53,9 +49,9 @@ set wildmenu
 " sets a colored column at 80 chars at a visual reference
 set colorcolumn=80
 
-" Add jellybean colorscheme
+" Add tomorrow night eighties colorscheme
 set t_Co=256
-colorscheme jellybeans
+colorscheme tomorrow-night-eighties
 
 " Fix Cursor in TMUX
 if exists('$TMUX')
@@ -104,4 +100,3 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby"
 au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead *.xm set filetype=objc
-
