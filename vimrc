@@ -21,6 +21,7 @@ Plugin 'roman/golden-ratio'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-endwise'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on       " fix html and js indenting

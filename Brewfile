@@ -1,5 +1,6 @@
 # install commandline utils
 brew 'ag'
+brew 'cmake'
 brew 'fzf'
 brew 'lua'
 brew 'node'

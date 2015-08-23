@@ -67,6 +67,10 @@ def install_fzf_scripts
   `/usr/local/Cellar/fzf/#{fzf_version}/install`
 end
 
+def install_ycm
+  `bash ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer`
+end
+
 def change_shell shell
   `chsh -s \`which #{shell}\``
 end
@@ -103,6 +107,7 @@ install_homebrew_cask
 install_apps
 install_mjolnir_config
 install_fzf_scripts
+install_ycm
 
 change_shell 'zsh'
 start_shell 'zsh'
