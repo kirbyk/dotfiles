@@ -96,6 +96,10 @@ def install_vim_plugins
   `vim +PluginInstall +qall`
 end
 
+def install_pip
+  `sudo easy_install pip`
+end
+
 install_zsh_plugins
 install_vim_plugins
 
@@ -108,6 +112,7 @@ install_apps
 install_mjolnir_config
 install_fzf_scripts
 install_ycm
+install_pip
 
 change_shell 'zsh'
 start_shell 'zsh'
