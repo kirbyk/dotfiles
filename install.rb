@@ -96,14 +96,19 @@ def install_vim_plugins
   `vim +PluginInstall +qall`
 end
 
+def install_tmux_plugins
+  install_dotfile 'tmux.conf'
+  clone 'tmux-plugins/tmux-yank', dotfile_path('tmux-yank')
+end
+
 def install_pip
   `sudo easy_install pip`
 end
 
 install_zsh_plugins
 install_vim_plugins
+install_tmux_plugins
 
-install_dotfile 'tmux.conf'
 install_dotfile 'gitconfig'
 
 install_homebrew
