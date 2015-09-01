@@ -101,3 +101,6 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby"
 au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead *.xm set filetype=objc
+
+" ignore node_modules DS_Store and git when using ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
