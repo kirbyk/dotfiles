@@ -27,3 +27,5 @@ eval "$(rbenv init -)"
 alias tmux="tmux -2"
 alias fuck="curl -X POST -d 'Rebooting=1&RestoreFactoryDefault=0' 'http://192.168.100.1/goform/RgConfiguration.pl'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /usr/local/Cellar/nvm/0.26.0/nvm.sh
