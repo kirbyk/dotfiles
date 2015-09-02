@@ -12,6 +12,7 @@ brew 'tree'
 brew 'tmux'
 brew 'vim'
 brew 'wget'
+brew 'youtube-dl'
 
 # install homebrew-cask
 brew 'caskroom/cask/brew-cask'
