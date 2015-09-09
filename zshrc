@@ -29,3 +29,5 @@ alias fuck="curl -X POST -d 'Rebooting=1&RestoreFactoryDefault=0' 'http://192.16
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /usr/local/Cellar/nvm/0.26.0/nvm.sh
+
+alias ngrok="ngrok http -subdomain=kirby"
