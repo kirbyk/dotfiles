@@ -104,3 +104,6 @@ au BufNewFile,BufRead *.xm set filetype=objc
 
 " ignore node_modules DS_Store and git when using ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" make .handlebars files have the same syntax highlighting as .html files
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=html
