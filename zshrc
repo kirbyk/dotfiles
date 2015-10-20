@@ -34,3 +34,4 @@ source /usr/local/Cellar/nvm/0.26.0/nvm.sh
 
 
 setopt HIST_IGNORE_SPACE # don't save to zsh history if suffixed with a space
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
