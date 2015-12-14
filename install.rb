@@ -2,6 +2,10 @@
 require 'fileutils'
 require 'pathname'
 
+def mkdir dir
+  `mkdir #{dir}`
+end
+
 def home_path file
   Dir.home + '/' + file
 end
@@ -59,6 +63,7 @@ def install_mjolnir_config
   `echo 'rocks_servers = { "http://rocks.moonscript.org" }' >> /usr/local/etc/luarocks52/config-5.2.lua`
   `luarocks install mjolnir.hotkey`
   `luarocks install mjolnir.application`
+  mkdir '.mjolnir'
   backup_and_link dotfile_path('mjolnir'), home_path('.mjolnir/init.lua')
 end
 
