@@ -114,7 +114,12 @@ def install_pip
   `sudo easy_install pip`
 end
 
+def disable_gatekeeper
+  'sudo spctl --master-disable'
+end
+
 def config_alfred
+  disable_gatekeeper
   `cp #{dotfile_path('alfred')} #{home_path('Library/Application Support/Alfred 2/Alfred.alfredpreferences/preferences/features/clipboard')}`
 end
 
