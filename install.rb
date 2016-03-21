@@ -110,6 +110,14 @@ def install_pip
   `sudo easy_install pip`
 end
 
+def install_pip
+  `sudo easy_install pip`
+end
+
+def config_alfred
+  `cp #{dotfile_path('alfred')} #{home_path('Library/Application Support/Alfred 2/Alfred.alfredpreferences/preferences/features/clipboard')}`
+end
+
 install_zsh_plugins
 install_vim_plugins
 install_tmux_plugins
