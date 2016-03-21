@@ -30,10 +30,7 @@ alias ngrok="ngrok http -subdomain=kirby"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/local/Cellar/nvm/0.29.0/nvm.sh
-
 
 setopt HIST_IGNORE_SPACE # don't save to zsh history if suffixed with a space
-
 
 alias npmo="npm --cache-min 9999999 install"
