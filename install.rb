@@ -123,6 +123,10 @@ def config_alfred
   `cp #{dotfile_path('alfred')} #{home_path('Library/Application Support/Alfred 2/Alfred.alfredpreferences/preferences/features/clipboard')}`
 end
 
+def config_iterm
+  `cp #{dotfile_path('iterm')} #{homep_path('Library/Preferences/com.googlecode.iterm2.plist')}`
+end
+
 install_zsh_plugins
 install_vim_plugins
 install_tmux_plugins
@@ -136,6 +140,9 @@ install_mjolnir_config
 install_fzf_scripts
 install_ycm
 install_pip
+
+config_alfred
+config_iterm
 
 change_shell 'zsh'
 start_shell 'zsh'
