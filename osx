@@ -88,6 +88,16 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
+# Disable spotlight search
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters = ( 65535, 49, 1048576 ); type = 'standard'; }; }"
+
+# Disable Finder search window
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "{ enabled = 0; value = { parameters = ( 65535, 49, 1572864 ); type = 'standard'; }; }"
+
+# Enable Ctrl-Space previous input. This is because I use Dvorak and makes it
+# easy to switch to Qwerty for other people.
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "{ enabled = 1; value = { parameters = ( 32, 49, 262144 ); type = 'standard'; }; }"
+
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
