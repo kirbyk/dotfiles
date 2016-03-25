@@ -127,6 +127,10 @@ def config_iterm
   `cp #{dotfile_path('iterm')} #{homep_path('Library/Preferences/com.googlecode.iterm2.plist')}`
 end
 
+def config_osx
+  `source #{dotfile_path('osx')}`
+end
+
 install_zsh_plugins
 install_vim_plugins
 install_tmux_plugins
@@ -143,6 +147,7 @@ install_pip
 
 config_alfred
 config_iterm
+config_osx
 
 change_shell 'zsh'
 start_shell 'zsh'

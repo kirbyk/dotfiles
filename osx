@@ -111,7 +111,7 @@ defaults write com.apple.messageshelper.AlertsController PlaySoundsKey -bool fal
 ###############################################################################
 
 # Turns off interface sound effects
-defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
+defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -int 0
 
 # Turns off sound changing feedback
 defaults write -g com.apple.sound.beep.feedback -bool false
