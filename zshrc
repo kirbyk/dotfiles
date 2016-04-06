@@ -38,3 +38,15 @@ setopt HIST_IGNORE_SPACE # don't save to zsh history if suffixed with a space
 
 alias npmo="npm --cache-min 9999999 install"
 
+
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
+
+
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
