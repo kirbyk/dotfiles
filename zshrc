@@ -16,37 +16,52 @@ antigen theme $HOME/.dotfiles kirbystheme --no-local-clone
 
 antigen apply
 
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-export EDITOR="/usr/local/bin/vim"
-
-
-eval "$(rbenv init -)" 
-
-
-alias tmux="tmux -2"
-alias fuck="curl -X POST -d 'Rebooting=1&RestoreFactoryDefault=0' 'http://192.168.100.1/goform/RgConfiguration.pl'"
-alias ngrok="ngrok http -subdomain=kirby"
+################################################################################
+#                                 ZSH config                                   #
+################################################################################
 
 # enable vim keybindings in the shell
 bindkey -v
 
+# don't save to zsh history if suffixed with a space
+setopt HIST_IGNORE_SPACE 
+
+################################################################################
+#                                 ZSH aliases                                  #
+################################################################################
+
+# 256 color hack
+alias tmux="tmux -2"
+
+# reset my modem when the internet goes down
+alias fuck="curl -X POST -d 'Rebooting=1&RestoreFactoryDefault=0' 'http://192.168.100.1/goform/RgConfiguration.pl'"
+alias ngrok="ngrok http -subdomain=kirby"
+
+# Offline npm hack
+alias npmo="npm --cache-min 9999999 install"
+
+################################################################################
+#                                 misc config                                  #
+################################################################################
+
+# default editor
+export EDITOR="/usr/local/bin/vim"
+
+# rbenv config
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)" 
+
 # enable fzf awesomeness. Make sure to do this after enabling vim keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-setopt HIST_IGNORE_SPACE # don't save to zsh history if suffixed with a space
-
-alias npmo="npm --cache-min 9999999 install"
-
-
+# nvm config
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
-
-# export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# Postgres commandline utils
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-
+# Golang config
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
