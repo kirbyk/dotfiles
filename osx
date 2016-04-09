@@ -98,6 +98,9 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "{ en
 # easy to switch to Qwerty for other people.
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "{ enabled = 1; value = { parameters = ( 32, 49, 262144 ); type = 'standard'; }; }"
 
+# Prevent iTunes from launching when pressing the media keys on the keyboard
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
