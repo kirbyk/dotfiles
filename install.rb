@@ -124,7 +124,7 @@ def config_alfred
 end
 
 def config_iterm
-  `cp #{dotfile_path('iterm')} #{homep_path('Library/Preferences/com.googlecode.iterm2.plist')}`
+  `cp #{dotfile_path('iterm')} #{home_path('Library/Preferences/com.googlecode.iterm2.plist')}`
 end
 
 def config_osx
