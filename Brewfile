@@ -2,6 +2,7 @@
 brew 'ag'
 brew 'awsebcli'
 brew 'cmake'
+brew 'duti'
 brew 'fzf'
 brew 'httpie'
 brew 'lua'
