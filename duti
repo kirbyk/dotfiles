@@ -1,0 +1,6 @@
+com.uranusjr.macdown .markdown all
+com.uranusjr.macdown .md all
+org.videolan.vlc .avi all
+org.videolan.vlc .mkv all
+org.videolan.vlc .mov all
+org.videolan.vlc .mp4 all

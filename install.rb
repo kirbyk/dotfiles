@@ -131,6 +131,14 @@ def config_osx
   `source #{dotfile_path('osx')}`
 end
 
+def duti path
+  `duti #{path}`
+end
+
+def config_default_apps
+  duti dotfile_path('duti')
+end
+
 install_zsh_plugins
 install_vim_plugins
 install_tmux_plugins
@@ -148,6 +156,7 @@ install_pip
 config_alfred
 config_iterm
 config_osx
+config_default_apps
 
 change_shell 'zsh'
 start_shell 'zsh'
