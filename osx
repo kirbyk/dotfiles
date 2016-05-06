@@ -108,6 +108,12 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 # Turns off sounds when sending and receiving messages
 defaults write com.apple.messageshelper.AlertsController PlaySoundsKey -bool false
 
+###############################################################################
+# Preview
+###############################################################################
+
+# Set single page as the default
+defaults write com.apple.Preview kPVPDFDefaultPageViewModeOption -int 1
 
 ###############################################################################
 # Global
