@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'fatih/vim-go'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
