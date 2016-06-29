@@ -108,3 +108,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " make .handlebars files have the same syntax highlighting as .html files
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=html
+
+" Follow links within .rST files using 'gf'
+let &includeexpr = 'substitute(v:fname,"^/",substitute(system("git rev-parse --show-cdup"),"\n$","", ""), "")'
