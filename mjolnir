@@ -22,3 +22,18 @@ hotkey.bind(super, "RIGHT", function()
   f.x = f.x + f.w
   win:setframe(f)
 end)
+
+hotkey.bind(super, "UP", function()
+  local win = window.focusedwindow()
+  local f = win:frame()
+  f.h = f.h / 2
+  win:setframe(f)
+end)
+
+hotkey.bind(super, "DOWN", function()
+  local win = window.focusedwindow()
+  local f = win:frame()
+  f.h = f.h / 2
+  f.y = f.y + f.h
+  win:setframe(f)
+end)
