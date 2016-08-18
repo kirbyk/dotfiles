@@ -50,7 +50,7 @@ end)
 
 hotkey.bind(lesssuper, "RIGHT", function()
   local win = window.focusedwindow()
-  local ef = win:screen():toeast():frame()
+  local ef = win:screen():toeast()
   if ef then
     win:setframe(ef:frame())
   end
