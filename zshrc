@@ -39,6 +39,8 @@ alias ngrok="ngrok http -subdomain=kirby"
 
 # Offline npm hack
 alias npmo="npm --cache-min 9999999 install"
+alias gbd="git recent"
+alias gbc="git recent-checkout"
 
 ################################################################################
 #                                 misc config                                  #

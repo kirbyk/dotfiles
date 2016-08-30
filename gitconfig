@@ -8,6 +8,9 @@
 [alias]
  	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	d = difftool
+	tags = tag -l
+	recent-checkout = "!r() { BRANCH_NUM=\"$1\"; cur=$(git rev-parse --abbrev-ref HEAD); BRANCH_NAME=`git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | sed -n \"${BRANCH_NUM}{p;q;}\"`; git checkout $BRANCH_NAME; }; if [ $# -lt 1 ]; then echo \"Missing branch index\"; exit 2; fi; r"
+	recent = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)%(color:reset)' | awk '{printf \"%2d: %s\\n\", NR, $0}'|  column -ts'|' | head -n 15; }; r"
 [push]
 	default = simple
 [diff]
