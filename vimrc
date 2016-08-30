@@ -98,6 +98,9 @@ let mapleader = ','
 
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Copy the current filename
+nmap ,cs :let @*=expand("%")<CR>
+
 " fix my syntax highlightings
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby"
 au BufNewFile,BufRead *.ejs set ft=html
