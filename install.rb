@@ -63,6 +63,7 @@ def install_mjolnir_config
   `echo 'rocks_servers = { "http://rocks.moonscript.org" }' >> /usr/local/etc/luarocks52/config-5.2.lua`
   `luarocks install mjolnir.hotkey`
   `luarocks install mjolnir.application`
+  `luarocks install mjolnir.screen`
   mkdir home_path('.mjolnir')
   backup_and_link dotfile_path('mjolnir'), home_path('.mjolnir/init.lua')
 end

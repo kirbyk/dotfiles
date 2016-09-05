@@ -1,24 +1,57 @@
 local hotkey = require "mjolnir.hotkey"
 local window = require "mjolnir.window"
+local screen = require "mjolnir.screen"
 
 local super = {"cmd", "alt", "ctrl"}
+local lesssuper = {"alt", "ctrl"}
 
 hotkey.bind(super, "M", function()
   local win = window.focusedwindow()
   win:maximize()
 end)
 
-hotkey.bind(super, "LEFT", function()
+hotkey.bind(lesssuper, "LEFT", function()
   local win = window.focusedwindow()
   local f = win:frame()
   f.w = f.w / 2
   win:setframe(f)
 end)
 
-hotkey.bind(super, "RIGHT", function()
+hotkey.bind(lesssuper, "RIGHT", function()
   local win = window.focusedwindow()
   local f = win:frame()
   f.w = f.w / 2
   f.x = f.x + f.w
   win:setframe(f)
+end)
+
+hotkey.bind(lesssuper, "UP", function()
+  local win = window.focusedwindow()
+  local f = win:frame()
+  f.h = f.h / 2
+  win:setframe(f)
+end)
+
+hotkey.bind(lesssuper, "DOWN", function()
+  local win = window.focusedwindow()
+  local f = win:frame()
+  f.h = f.h / 2
+  f.y = f.y + f.h
+  win:setframe(f)
+end)
+
+hotkey.bind(super, "LEFT", function()
+  local win = window.focusedwindow()
+  local ws = win:screen():towest()
+  if ws then
+    win:setframe(ws:frame())
+  end
+end)
+
+hotkey.bind(super, "RIGHT", function()
+  local win = window.focusedwindow()
+  local ef = win:screen():toeast()
+  if ef then
+    win:setframe(ef:frame())
+  end
 end)

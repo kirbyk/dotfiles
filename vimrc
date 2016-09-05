@@ -98,13 +98,20 @@ let mapleader = ','
 
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Copy the current filename
+nmap ,cs :let @*=expand("%")<CR>
+
 " fix my syntax highlightings
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby"
 au BufNewFile,BufRead *.ejs set ft=html
 au BufNewFile,BufRead *.xm set filetype=objc
+au BufNewFile,BufRead Vagrantfile set ft=ruby"
 
 " ignore node_modules DS_Store and git when using ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " make .handlebars files have the same syntax highlighting as .html files
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=html
+
+" Follow links within .rST files using 'gf'
+let &includeexpr = 'substitute(v:fname,"^/",substitute(system("git rev-parse --show-cdup"),"\n$","", ""), "")'
