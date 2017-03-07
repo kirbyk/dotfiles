@@ -64,6 +64,5 @@ export NVM_DIR=~/.nvm
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Golang config
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/local/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/projects/go
