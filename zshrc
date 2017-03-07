@@ -35,7 +35,6 @@ alias tmux="tmux -2"
 
 # reset my modem when the internet goes down
 alias fuck="curl -X POST -d 'Rebooting=1&RestoreFactoryDefault=0' 'http://192.168.100.1/goform/RgConfiguration.pl'"
-alias ngrok="ngrok http -subdomain=kirby"
 
 # Offline npm hack
 alias npmo="npm --cache-min 9999999 install"
@@ -56,13 +55,20 @@ eval "$(rbenv init -)"
 # enable fzf awesomeness. Make sure to do this after enabling vim keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# nvm config
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+# # nvm config
+# export NVM_DIR=~/.nvm
+# . $(brew --prefix nvm)/nvm.sh
+
+nvm() {
+    unset -f nvm
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . $(brew --prefix nvm)/nvm.sh  # This loads nvm
+    nvm "$@"
+}
 
 # Postgres commandline utils
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-# Golang config
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/projects/go
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
