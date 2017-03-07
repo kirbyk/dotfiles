@@ -30,7 +30,14 @@ function precmd() {
   print -rP '$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info)'
 }
 
-PROMPT='%{$reset_color%}→ '
+# make the arrow red if the last program had a non-zero return code
+function return_val() {
+  if [ $? != 0 ]; then
+    echo "$fg[red]"
+  fi
+}
+
+PROMPT='%{$reset_color%}$(return_val)→ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
