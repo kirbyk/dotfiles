@@ -116,3 +116,7 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=html
 
 " Follow links within .rST files using 'gf'
 let &includeexpr = 'substitute(v:fname,"^/",substitute(system("git rev-parse --show-cdup"),"\n$","", ""), "")'
+
+" :w!! 
+" write the file when you accidentally opened it without root privileges
+cmap w!! w !sudo tee % > /dev/null
