@@ -120,3 +120,6 @@ let &includeexpr = 'substitute(v:fname,"^/",substitute(system("git rev-parse --s
 " :w!! 
 " write the file when you accidentally opened it without root privileges
 cmap w!! w !sudo tee % > /dev/null
+
+" make ctrlp use .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']

@@ -37,7 +37,7 @@ function return_val() {
   fi
 }
 
-PROMPT='%{$reset_color%}$(return_val)→ '
+PROMPT='%{$reset_color%}$(return_val)→ %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"

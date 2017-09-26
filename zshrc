@@ -55,20 +55,16 @@ eval "$(rbenv init -)"
 # enable fzf awesomeness. Make sure to do this after enabling vim keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# # nvm config
-# export NVM_DIR=~/.nvm
-# . $(brew --prefix nvm)/nvm.sh
-
-nvm() {
-    unset -f nvm
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . $(brew --prefix nvm)/nvm.sh  # This loads nvm
-    nvm "$@"
-}
-
 # Postgres commandline utils
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+PATH=$PATH:/Users/kirby/.local/mut/bin
+PATH=$PATH:$HOME/Downloads/apache-maven-3.5.0/bin
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+
+PATH=$HOME/anaconda/bin:$PATH
+PATH=$HOME/bin:$PATH
