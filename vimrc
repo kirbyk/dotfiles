@@ -18,6 +18,7 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'prettier/vim-prettier'
 Plugin 'raimondi/delimitmate'
 Plugin 'roman/golden-ratio'
 Plugin 'scrooloose/syntastic'
@@ -123,3 +124,7 @@ cmap w!! w !sudo tee % > /dev/null
 
 " make ctrlp use .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Run prettier on all of the following file formats automatically on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
