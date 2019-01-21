@@ -47,34 +47,20 @@ def install_homebrew
   `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 end
 
-def brew command
-  `brew #{command}`
-end
-
-def install_homebrew_cask
-  brew 'tap homebrew/bundle'
-end
-
 def install_apps
   brew 'bundle'
 end
 
-def install_mjolnir_config
-  `echo 'rocks_servers = { "http://rocks.moonscript.org" }' >> /usr/local/etc/luarocks52/config-5.2.lua`
-  `luarocks install mjolnir.hotkey`
-  `luarocks install mjolnir.application`
-  `luarocks install mjolnir.screen`
-  mkdir home_path('.mjolnir')
-  backup_and_link dotfile_path('mjolnir'), home_path('.mjolnir/init.lua')
+def brew command
+  `brew #{command}`
 end
 
 def install_fzf_scripts
-  fzf_version = `fzf --version`.delete("\n")
-  `/usr/local/Cellar/fzf/#{fzf_version}/install`
+  `$(brew --prefix)/opt/fzf/install`
 end
 
 def install_ycm
-  `bash ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer`
+  `python ~/.vim/bundle/YouCompleteMe/install.py --all`
 end
 
 def change_shell shell
@@ -107,21 +93,8 @@ def install_tmux_plugins
   clone 'tmux-plugins/tmux-yank', dotfile_path('tmux-yank')
 end
 
-def install_pip
-  `sudo easy_install pip`
-end
-
-def install_pip
-  `sudo easy_install pip`
-end
-
 def disable_gatekeeper
   'sudo spctl --master-disable'
-end
-
-def config_alfred
-  disable_gatekeeper
-  `cp #{dotfile_path('alfred')} #{home_path('Library/Application Support/Alfred 2/Alfred.alfredpreferences/preferences/features/clipboard')}`
 end
 
 def config_iterm
@@ -147,14 +120,10 @@ install_tmux_plugins
 install_dotfile 'gitconfig'
 
 install_homebrew
-install_homebrew_cask
 install_apps
-install_mjolnir_config
 install_fzf_scripts
 install_ycm
-install_pip
 
-config_alfred
 config_iterm
 config_osx
 config_default_apps
